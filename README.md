@@ -1,12 +1,13 @@
 # Excel to Gedcom converter
 
-Excel is one input format of the free, open source family tree software available at http://freshmeat.sourceforge.net/projects/familytree_cgi/ . The expected column are descried in the documentation and copied below as reference.
+Excel is one input format of the free, open source family tree software available at http://freshmeat.sourceforge.net/projects/familytree_cgi/ . The expected columns are descried in the documentation and copied below as reference.
 
 Script that is available in this project converts excel to [GEDCOM](https://en.wikipedia.org/wiki/GEDCOM) format which is the de facto standard for genealogy projects like [Gramps](https://gramps-project.org/).
 
 Usage of the script.
-The script expects three parameters
+The script expects four parameters
    * the excel file name
+   * directory in which the pictores of the family members are located
    * the submitter first name
    * the submitter last name
    
@@ -19,7 +20,7 @@ python xlsToGedcom myFamily.xls Homer Simpson > myFamily.ged
 
 
 
-Expected excle format as per readme.txt of project familytree:
+Expected excel format as per readme.txt of project [familytree](http://freshmeat.sourceforge.net/projects/familytree_cgi/):
 
 The excel format is quite straightforward based on the example file. Each row (except the header) represents a person. The fields are:
  * ID: the ID of the person. It can be anything (like 123 or Bart_Simpson), but it should only contain alphanumeric characters and underscore (no whitespace is allowed).
@@ -50,3 +51,7 @@ Note, that the extension of an excel data file must be xls.
 
 Tip: Select the second row, click on menu Window and select Freeze Panels.
 This will freeze the first row and you can see the title of columns.
+
+NAME OF THE PICTURE:
+
+One picture may belong to each person. The name of the picture file reflects the person it belongs to. The picture file is obtained from the lowercased full name by substituting spaces with underscores and adding the file extension to it. From example from "Ferenc Bodon3" we get "ferenc_bodon3.jpg".
