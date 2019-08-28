@@ -2,10 +2,10 @@
 
 Excel is one input format of the free, open source family tree software available at http://freshmeat.sourceforge.net/projects/familytree_cgi/ . The expected columns are descried in the documentation and copied below as reference.
 
-Script that is available in this project converts excel to [GEDCOM](https://en.wikipedia.org/wiki/GEDCOM) format which is the de facto standard for genealogy projects like [Gramps](https://gramps-project.org/).
+Script contained in this project converts excel to [GEDCOM](https://en.wikipedia.org/wiki/GEDCOM) format which is the de facto standard for genealogy projects like [Gramps](https://gramps-project.org/). The script relies on Python 3.7.
 
 Usage of the script.
-The script expects four parameters
+The script, called xlsToGedcom.py, expects four parameters
    * the excel file name
    * directory in which the pictores of the family members are located
    * the submitter first name
@@ -13,9 +13,8 @@ The script expects four parameters
    
 Submitter, which is the genealogy data generator person, is mandatory in Gedcom files. The script prints the Gedcom content to the standard output so you can redirect it to any file. Example usage:
 ```
-python xlsToGedcom myFamily.xls Homer Simpson > myFamily.ged
+xlsToGedcom.py myFamily.xls ./pictures/ Homer Simpson > myFamily.ged
 ```
-
 
 
 
