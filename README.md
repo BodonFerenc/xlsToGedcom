@@ -1,6 +1,6 @@
 # Excel to Gedcom converter
 
-One input format of the free, open source family tree software available at http://freshmeat.sourceforge.net/projects/familytree_cgi/ is excel. The expected column are descried in the documentation and copied below as reference.
+Excel is one input format of the free, open source family tree software available at http://freshmeat.sourceforge.net/projects/familytree_cgi/ . The expected column are descried in the documentation and copied below as reference.
 
 Script that is available in this project converts excel to [GEDCOM](https://en.wikipedia.org/wiki/GEDCOM) format which is the de facto standard for genealogy projects like [Gramps](https://gramps-project.org/).
 
