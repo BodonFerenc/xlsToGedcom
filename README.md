@@ -13,7 +13,7 @@ The script, called xlsToGedcom.py, expects four parameters
    
 Submitter, which is the genealogy data generator person, is mandatory in Gedcom files. The script prints the Gedcom content to the standard output so you can redirect it to any file. Example usage:
 ```
-xlsToGedcom.py myFamily.xls ./pictures/ Homer Simpson > myFamily.ged
+xlsToGedcom.py myFamily.xls ./pictures Homer Simpson > myFamily.ged
 ```
 
 
