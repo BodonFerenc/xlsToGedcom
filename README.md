@@ -17,7 +17,8 @@ xlsToGedcom.py myFamily.xls ./pictures Homer Simpson > myFamily.ged
 ```
 
 
-
+## Input format
+### Excel
 
 Expected excel format as per readme.txt of project [familytree](http://freshmeat.sourceforge.net/projects/familytree_cgi/):
 
@@ -46,6 +47,5 @@ Note, that the extension of an excel data file must be xls.
 Tip: Select the second row, click on menu Window and select Freeze Panels.
 This will freeze the first row and you can see the title of columns.
 
-NAME OF THE PICTURE:
-
+### Pictures
 One picture may belong to each person. The name of the picture file reflects the person it belongs to. The picture file is obtained from the lowercased full name by substituting spaces with underscores and adding the file extension to it. From example from "Ferenc Bodon3" we get "ferenc_bodon3.jpg".
