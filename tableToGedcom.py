@@ -1,6 +1,7 @@
 import datetime
 import calendar
 import os
+import sys
 from dataclasses import dataclass
 from typing import Dict, List, Tuple
 
@@ -101,6 +102,8 @@ class FamilyTreeMapping:
         t      -- the family tree data in a table-like format, i.e. each person is a map and people are contained in a list. This format is returned by function pyexcel.get_records.
         picdir -- directory that stores pictores of the family members
         """
+        if not os.path.exists(picdir):
+            print("Picture directory {} does not exists! No picture information will be printed.".format(picdir), file=sys.stderr)
         self.t = t.copy()  
         self.picdir = picdir
         self.__ID2GedcomID = {row[IDCOLNAME]: idx + 1 for idx, row in enumerate(t)}
@@ -157,6 +160,7 @@ class FamilyTreeMapping:
             if row[IDCOLNAME] in self.__famSMap:
                 for fmas in self.__famSMap[row[IDCOLNAME]]:
                     print('1 FAMS @F{}@'.format(fmas))
+            # picture handling should be refactored. This code is not modular
             if os.path.isfile(self.__getPicName(row[IDCOLNAME])):
                 print('1 OBJE @O{}@'.format(len(picList)))
                 picList.append(self.__getPicName(row[IDCOLNAME]))
