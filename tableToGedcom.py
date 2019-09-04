@@ -83,8 +83,12 @@ class FamilyMapping:
     def printGedcom(self, ID2GedcomID):
         for k, v in self.parentToFamily.items():
             print('0 @F{}@ FAM'.format(v.id))
-            if k[0]: print('1 HUSB @I{}@'.format(ID2GedcomID[k[0]]))
-            if k[1]: print('1 WIFE @I{}@'.format(ID2GedcomID[k[1]]))
+            if k[0]: 
+                if k[0] in ID2GedcomID: print('1 HUSB @I{}@'.format(ID2GedcomID[k[0]]))
+                else: print("Missing individual {} registered as father.".format(k[0]), file=sys.stderr)
+            if k[+1]: 
+                if k[1] in ID2GedcomID: print('1 WIFE @I{}@'.format(ID2GedcomID[k[1]]))
+                else: print("Missing individual {} registered as mother.".format(k[1]), file=sys.stderr)
             for child in v.children:
                 print('1 CHIL @I{}@'.format(child))            
 
@@ -131,7 +135,7 @@ class FamilyTreeMapping:
         for row in self.t:
             print('0 @I{}@ INDI'.format(self.__ID2GedcomID[row[IDCOLNAME]]))    
             print('1 NAME {} /{}/'.format(getFirstNameWithMidName(row), getSurNameWithPrefix(row)))
-            print('2 GIVN {}'.format(row['first name'].encode().decode()))
+            print('2 GIVN {}'.format(row['first name']))
             print('2 SURN {}'.format(row['last name']))
             if row['nickname']:
                 print('2 NICK {}'.format(row['nickname']))
