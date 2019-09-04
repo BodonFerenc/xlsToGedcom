@@ -17,7 +17,8 @@ xlsToGedcom.py myFamily.xls ./pictures Homer Simpson > myFamily.ged
 ```
 
 
-
+## Input format
+### Excel
 
 Expected excel format as per readme.txt of project [familytree](http://freshmeat.sourceforge.net/projects/familytree_cgi/):
 
@@ -40,17 +41,11 @@ The excel format is quite straightforward based on the example file. Each row (e
  * is living?: 0 for live 1 for dead
  * place of birth: the format is: "country" "city". The city part may be omitted. Quotation marks are mandatory.
  * place of death: the format is: "country" "city". The city part may be omitted. Quotation marks are mandatory.
- * cemetery: the format is: "country" "city" "cemetery", like: "USA" "Washington D.C." "Arlington National Cemetery"
- * schools: use comma as separator, like: Harward, MIT
- * jobs: use comma as separator
- * work places: use comma as separator
- * places of living: places separated by comma, like: "USA" "Springfield", "USA" "Connecticut"
- * general: you would typically write something general about the person.
+
 Note, that the extension of an excel data file must be xls.
 
 Tip: Select the second row, click on menu Window and select Freeze Panels.
 This will freeze the first row and you can see the title of columns.
 
-NAME OF THE PICTURE:
-
+### Pictures
 One picture may belong to each person. The name of the picture file reflects the person it belongs to. The picture file is obtained from the lowercased full name by substituting spaces with underscores and adding the file extension to it. From example from "Ferenc Bodon3" we get "ferenc_bodon3.jpg".
