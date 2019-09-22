@@ -5,7 +5,7 @@ from tableToGedcom import FamilyTreeMapping
 import pyexcel as pe
 
 def main(argv):
-    # TODO consider using getopt
+    # TODO consider using argparse
     if len(argv) < 4: 
         print("Four parameters are mandatory: input file, picture directory, first name and last name", file=sys.stderr)
         return
